@@ -1,0 +1,11 @@
+[elm]
+name = "go.support"
+version = "0.1.0"
+kind = "service"
+source = "github:redstone6835:elm-language-go"
+mode = "m"
+integrated_phase = "runtime"
+
+[[profiles]]
+id = "hitoshizuku-default"
+priority = "100"

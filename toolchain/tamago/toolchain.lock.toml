@@ -1,0 +1,18 @@
+schema_version = 1
+
+[framework]
+module = "github.com/usbarmory/tamago"
+version = "v1.27.0"
+go_version = "1.27.0"
+
+[compiler]
+repository = "https://github.com/usbarmory/tamago-go"
+tag = "tamago-go1.27.0"
+tag_object = "c6f1d7290a6fe7356694fd4dc711ec4cee62df79"
+commit = "81722d046d7fd325f6719cc7c638b8822a2803b3"
+delivery = "go-tool"
+patch_set = "none"
+
+[release.linux_amd64]
+asset = "tamago-go1.27.0.linux-amd64.tar.gz"
+sha256 = "1b014c1b12a6195fad1eebd1f9af6d5c788b4db11569ca43548080f744e9c7a2"

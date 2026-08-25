@@ -1,0 +1,49 @@
+{
+  "fixture_status": "shape-only-invalid",
+  "schema": 2,
+  "operation_id": {
+    "algorithm": "sha256-trunc64-le-nonzero-v2",
+    "domain": "HITOSHIZUKU-ELM-OPERATION-ID-U64-V2",
+    "bits": 64,
+    "endian": "little"
+  },
+  "package": {
+    "id": "example.go.managed-control",
+    "version": "0.1.0",
+    "kind": "service",
+    "backend": "tamago-managed",
+    "runtime_abi": "hitoshizuku.language-runtime.v1",
+    "runtime_min_version": 1,
+    "runtime_max_version": 1,
+    "runtime_entrypoint": "elm_go_managed_entry",
+    "runtime_features": ["managed"],
+    "capabilities": ["device.resource"],
+    "limits": {
+      "max_handles": 16,
+      "max_dma_bytes": 0,
+      "max_pending_requests": 16,
+      "max_heap_bytes": 16777216,
+      "max_stack_bytes": 1048576,
+      "max_threads": 2,
+      "max_metadata_bytes": 1048576,
+      "max_artifact_bytes": 67108864
+    }
+  },
+  "interface": {
+    "target": "riscv64gc-unknown-none-elf",
+    "profile": "hitoshizuku-default",
+    "bridge_abi": 1,
+    "kernel_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "interface_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "source_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "framework_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+    "package_id": 1,
+    "artifact_id": 1,
+    "package_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "artifact_digest": "0000000000000000000000000000000000000000000000000000000000000000",
+    "interface_digest": "0000000000000000000000000000000000000000000000000000000000000000"
+  },
+  "types": [],
+  "symbols": [],
+  "operations": []
+}

@@ -1,0 +1,23 @@
+[package]
+name = "elm-language-go-runtime-elm"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+test = true
+doctest = true
+
+[features]
+default = ["trusted-direct"]
+trusted-direct = ["elm-language-go-carrier/trusted-direct"]
+managed = ["elm-language-go-carrier/managed"]
+
+[dependencies]
+elm-language-go-carrier = { path = "../carrier", default-features = false }
+
+[lints]
+workspace = true

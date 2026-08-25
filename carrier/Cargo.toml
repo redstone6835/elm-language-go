@@ -1,0 +1,20 @@
+[package]
+name = "elm-language-go-carrier"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+
+[lib]
+test = true
+doctest = true
+
+[features]
+default = ["trusted-direct"]
+trusted-direct = []
+managed = []
+
+[lints]
+workspace = true

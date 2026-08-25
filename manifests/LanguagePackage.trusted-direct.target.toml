@@ -1,0 +1,36 @@
+# TARGET DESIGN ONLY: current cargo-elm does not accept this draft schema.
+schema = "trusted-direct-target-draft-1"
+
+[package]
+id = "example.go.mmio"
+version = "0.1.0"
+kind = "driver"
+target = "riscv64gc-unknown-none-elf"
+profile = "hitoshizuku-default"
+
+[execution]
+plane = "trusted-direct"
+entrypoint = "elm_go_entry"
+
+[runtime]
+name = "language.runtime"
+abi = 1
+dependency = "resident-framework"
+
+[support]
+name = "go.support"
+carrier_abi = 1
+
+[interface]
+schema = "interface.schema.json"
+bindings = "DirectBindings.target.toml"
+
+[capabilities]
+requested = ["device.driver", "device.resource", "device.interrupt"]
+
+[limits]
+max_heap_bytes = 67108864
+max_stack_bytes = 1048576
+max_goroutines = 64
+max_dma_bytes = 16777216
+max_metadata_bytes = 4194304

@@ -1,0 +1,21 @@
+[workspace]
+resolver = "2"
+members = ["carrier", "runtime-elm"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.85"
+license = "GPL-3.0-only"
+repository = "https://github.com/redstone6835/elm-language-go"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+codegen-units = 1
+lto = true
+
+[workspace.lints.rust]
+unexpected_cfgs = "warn"

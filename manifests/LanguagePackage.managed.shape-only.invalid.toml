@@ -1,0 +1,47 @@
+# EXPECTED INVALID: documents current managed package field shape only.
+[package]
+schema = 2
+id = "example.go.managed-control"
+version = "0.1.0"
+kind = "service"
+backend = "tamago-managed"
+targets = ["riscv64gc-unknown-none-elf"]
+profile = "hitoshizuku-default"
+eki = "artifacts/example-go-managed.eki"
+eki_sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+interface = "interface.schema.json"
+interface_sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+bridge = "LanguageBridge.managed.shape-only.invalid.toml"
+bridge_sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+
+[runtime]
+abi = "hitoshizuku.language-runtime.v1"
+min_version = 1
+max_version = 1
+entrypoint = "elm_go_managed_entry"
+features = ["managed"]
+
+[[artifact]]
+path = "artifacts/example-go-managed.eki"
+kind = "eki"
+target = "riscv64gc-unknown-none-elf"
+runtime_abi = "hitoshizuku.language-runtime.v1"
+entrypoint = "elm_go_managed_entry"
+sha256 = "0000000000000000000000000000000000000000000000000000000000000000"
+size = 1
+
+[artifact.signature]
+algorithm = "none"
+
+[capabilities]
+requested = ["device.resource"]
+
+[limits]
+max_handles = 16
+max_dma_bytes = 0
+max_pending_requests = 16
+max_heap_bytes = 16777216
+max_stack_bytes = 1048576
+max_threads = 2
+max_metadata_bytes = 1048576
+max_artifact_bytes = 67108864

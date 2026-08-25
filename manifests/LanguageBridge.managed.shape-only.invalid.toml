@@ -1,0 +1,56 @@
+# EXPECTED INVALID: referenced symbols and artifact are intentionally absent.
+schema = 2
+endian = "little"
+
+[[type]]
+name = "U32"
+kind = "integer"
+size = 4
+align = 4
+version = 1
+endian = "little"
+ownership = "value"
+limits = {}
+bits = 32
+signed = false
+
+[[type]]
+name = "MmioHandle"
+kind = "handle"
+size = 8
+align = 8
+version = 1
+endian = "little"
+ownership = "handle"
+limits = {}
+handle_kind = "mmio"
+
+[[type]]
+name = "MmioReadRequest"
+kind = "struct"
+size = 16
+align = 8
+version = 1
+endian = "none"
+ownership = "borrowed"
+limits = {}
+
+[[type.field]]
+name = "region"
+type = "MmioHandle"
+offset = 0
+
+[[type.field]]
+name = "offset"
+type = "U32"
+offset = 8
+
+[[operation]]
+api_path = "general.dev.mmio.read32"
+wire = "device.mmio.read32"
+request = "MmioReadRequest"
+response = "U32"
+ownership = "none"
+version = 1
+capability = "device.resource"
+limits = { max_request_bytes = 16, max_response_bytes = 4 }

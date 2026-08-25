@@ -1,0 +1,18 @@
+# TARGET DESIGN ONLY: direct bindings require a future cargo-elm schema.
+schema = "direct-bindings-target-draft-1"
+plane = "trusted-direct"
+carrier_abi = 1
+
+[[import]]
+api_path = "general.dev.mmio.read32"
+symbol = "general.dev.mmio.read32"
+native_abi = "hitoshizuku-carrier-c-v1"
+capability = "device.resource"
+safety = "unsafe"
+
+[[import]]
+api_path = "general.dev.mmio.write32"
+symbol = "general.dev.mmio.write32"
+native_abi = "hitoshizuku-carrier-c-v1"
+capability = "device.resource"
+safety = "unsafe"
